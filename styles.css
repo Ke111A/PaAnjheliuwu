@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #0d1b2a;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d1b2a;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+.star:nth-child(1) {
+    top: 20%;
+    left: 25%;
+    animation-duration: 3s;
+}
+
+.star:nth-child(2) {
+    top: 40%;
+    left: 60%;
+    animation-duration: 4s;
+}
+
+.star:nth-child(3) {
+    top: 70%;
+    left: 35%;
+    animation-duration: 5s;
+}
+
+.star:nth-child(4) {
+    top: 50%;
+    left: 80%;
+    animation-duration: 3.5s;
+}
+
+.star:nth-child(5) {
+    top: 10%;
+    left: 50%;
+    animation-duration: 2.5s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.message {
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.message h1 {
+    font-size: 3em;
+    margin: 0;
+    animation: glow 2s infinite alternate;
+}
+
+.message p {
+    font-size: 1.5em;
+    margin: 10px 0 20px;
+    animation: fadeUp 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff5e6c, 0 0 20px #ff5e6c, 0 0 30px #ff5e6c;
+    }
+    to {
+        text-shadow: 0 0 20px #ff5e6c, 0 0 30px #ff5e6c, 0 0 40px #ff5e6c;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button, .animated-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    color: #fff;
+    background: #ff5e6c;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.button:hover, .animated-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 10px #ff5e6c, 0 0 20px #ff5e6c, 0 0 30px #ff5e6c;
+    }
+    to {
+        box-shadow: 0 0 20px #ff5e6c, 0 0 30px #ff5e6c, 0 0 40px #ff5e6c;
+    }
+}
+
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    opacity: 0;
+    animation: shoot 2s linear infinite;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translate(0, 0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, -100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.hello-kitty {
+    position: absolute;
+    width: 100px;
+    animation: moveKitty 10s infinite alternate;
+}
+
+@keyframes moveKitty {
+    0% {
+        top: 10%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+    25% {
+        top: 20%;
+        left: 80%;
+        transform: rotate(10deg);
+    }
+    50% {
+        top: 70%;
+        left: 60%;
+        transform: rotate(-10deg);
+    }
+    75% {
+        top: 80%;
+        left: 20%;
+        transform: rotate(10deg);
+    }
+    100% {
+        top: 50%;
+        left: 40%;
+        transform: rotate(-10deg);
+    }
+}
+
+.button-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
